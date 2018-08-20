@@ -1,0 +1,29 @@
+---
+- project:
+    third-party-check:
+      jobs:
+        - build-sphinx-docs
+        - ansible-otc-lint
+    periodic:
+      jobs:
+        - build-sphinx-docs
+
+- job:
+    name: ansible-otc-lint
+    pre-run: tests/pre.yml
+    run: tests/run.yml
+#    post-run: tests/post.yml
+    attempts: 1
+    timeout: 5400
+#    required-projects:
+#      - openstack/kolla
+#      - openstack/requirements
+#    irrelevant-files:
+#      - ^.*\.rst$
+#      - ^doc/.*
+#      - ^test-requirements.txt$
+#      - ^releasenotes/.*$
+#    vars:
+#      scenario: aio
+#    roles:
+#      - zuul: openstack-infra/zuul-jobs

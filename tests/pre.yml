@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: Install dep packages
+      apt: name=python-pip
+      become: true
+
+
+    - name: Install pip packages
+      pip:
+        name:
+          - ansible-lint
+          - jmespath
+      become: true
