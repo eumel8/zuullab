@@ -2,11 +2,11 @@
 - project:
     third-party-check:
       jobs:
-        - build-sphinx-docs
         - ansible-otc-lint
     periodic:
       jobs:
-        - build-sphinx-docs
+        - ansible-otc-lint
+#        - build-sphinx-docs
 
 - job:
     name: ansible-otc-lint
@@ -15,6 +15,7 @@
 #    post-run: tests/post.yml
     attempts: 1
     timeout: 5400
+    branches: master,zuultrigger
 #    required-projects:
 #      - openstack/kolla
 #      - openstack/requirements
