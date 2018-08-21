@@ -2,11 +2,11 @@
 - project:
     third-party-check:
       jobs:
-        - build-sphinx-docs
         - ansible-otc-lint
     periodic:
       jobs:
-        - build-sphinx-docs
+        - ansible-otc-lint
+#        - build-sphinx-docs
 
 - job:
     name: ansible-otc-lint
