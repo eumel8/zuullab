@@ -1,5 +1,8 @@
 ---
 - project:
+    check:
+      jobs:
+        - noop
     third-party-check:
       jobs:
         - ansible-otc-lint
