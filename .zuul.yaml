@@ -2,13 +2,15 @@
 - project:
     check:
       jobs:
-        - noop
+        - run-test-command
+        - tox-docs
     third-party-check:
       jobs:
         - ansible-otc-lint
     periodic:
       jobs:
         - ansible-otc-lint
+        - tox-docs
 #        - build-sphinx-docs
 
 - job:
