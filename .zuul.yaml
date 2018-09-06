@@ -6,21 +6,21 @@
         - tox-docs
     third-party-check:
       jobs:
-        - ansible-otc-lint
+        - run-test-command
     periodic:
       jobs:
-        - ansible-otc-lint
         - tox-docs
-#        - build-sphinx-docs
+        - build-sphinx-docs
+#        - ansible-otc-lint
 
-- job:
-    name: ansible-otc-lint
-    pre-run: tests/pre.yml
-    run: tests/run.yml
+#- job:
+#    name: ansible-otc-lint
+#    pre-run: tests/pre.yml
+#    run: tests/run.yml
 #    post-run: tests/post.yml
-    attempts: 1
-    timeout: 5400
-    branches: master,zuultrigger
+#    attempts: 1
+#    timeout: 5400
+#    branches: master,zuultrigger
 #    required-projects:
 #      - openstack/kolla
 #      - openstack/requirements
