@@ -12,7 +12,6 @@
         - tox-docs
         - build-sphinx-docs
 #        - ansible-otc-lint
-
 #- job:
 #    name: ansible-otc-lint
 #    pre-run: tests/pre.yml
